@@ -65,7 +65,14 @@
   border: 10px solid rgba(13, 71, 161, 0.6);
   border-radius: 50%;
   border-left-color: #0d47a1;
-  animation: loader 8.3s linear infinite;
+  -webkit-animation: loader 8.3s linear infinite;
+          animation: loader 8.3s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes loader {
@@ -209,6 +216,20 @@
   background-color: transparent;
   border: none;
   outline: none;
+}
+#serch-text::-moz-placeholder {
+  color: #555252;
+  font-size: 14px;
+  font-family: "Roboto";
+  text-transform: capitalize;
+  text-align: center;
+}
+#serch-text:-ms-input-placeholder {
+  color: #555252;
+  font-size: 14px;
+  font-family: "Roboto";
+  text-transform: capitalize;
+  text-align: center;
 }
 #serch-text::placeholder {
   color: #555252;
@@ -590,6 +611,16 @@
   outline: none;
   border: 1px solid #000;
 }
+#lib1::-moz-placeholder {
+  padding-left: 20px;
+  font-size: 15px;
+  color: var(--content-primary);
+}
+#lib1:-ms-input-placeholder {
+  padding-left: 20px;
+  font-size: 15px;
+  color: var(--content-primary);
+}
 #lib1::placeholder {
   padding-left: 20px;
   font-size: 15px;
@@ -627,6 +658,18 @@
   border-radius: 12px;
   outline: none;
   border: 1px solid #000;
+}
+#lib2::-moz-placeholder {
+  padding-left: 20px;
+  font-size: 15px;
+  color: var(--content-primary);
+  background-color: transparent;
+}
+#lib2:-ms-input-placeholder {
+  padding-left: 20px;
+  font-size: 15px;
+  color: var(--content-primary);
+  background-color: transparent;
 }
 #lib2::placeholder {
   padding-left: 20px;
@@ -1019,4 +1062,4 @@
   text-decoration: none;
   font-size: 25px;
   color: #aab6bd;
-}
+}/*# sourceMappingURL=aut.css.map */

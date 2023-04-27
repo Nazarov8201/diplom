@@ -65,7 +65,14 @@
   border: 10px solid rgba(13, 71, 161, 0.6);
   border-radius: 50%;
   border-left-color: #0d47a1;
-  animation: loader 8.3s linear infinite;
+  -webkit-animation: loader 8.3s linear infinite;
+          animation: loader 8.3s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes loader {
@@ -209,6 +216,20 @@
   background-color: transparent;
   border: none;
   outline: none;
+}
+#serch-text::-moz-placeholder {
+  color: #555252;
+  font-size: 14px;
+  font-family: "Roboto";
+  text-transform: capitalize;
+  text-align: center;
+}
+#serch-text:-ms-input-placeholder {
+  color: #555252;
+  font-size: 14px;
+  font-family: "Roboto";
+  text-transform: capitalize;
+  text-align: center;
 }
 #serch-text::placeholder {
   color: #555252;
@@ -798,4 +819,4 @@
   text-decoration: none;
   font-size: 25px;
   color: #aab6bd;
-}
+}/*# sourceMappingURL=dis.css.map */
