@@ -1,0 +1,39 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Roboto:wght@400;500;700;900&display=swap');
+
+.container{
+      width: 95%;
+      margin: 0 auto;
+}
+
+@media only screen and (min-width: 1024px) {
+      .container{
+            max-width: 1170px;
+      }
+}
+
+body.active{
+      position: relative;
+      overflow: hidden;
+      &:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: black;
+          opacity: 0.4;
+          z-index: 1;
+      }
+  }
+
+@import "header";
+@import "nod";
+@import "new-book";
+@import "footer";

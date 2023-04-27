@@ -1,0 +1,61 @@
+
+
+.new-book{
+      min-height: 300px;
+      overflow: hidden;
+}
+
+.new-book-nav{
+      margin: 50px 0;
+      h3{
+            font-size: 26px;
+            color: #262a37;
+            font-family: 'Roboto';
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
+      }
+}
+
+@media only screen and (min-width: 768px) {
+      .new-book-nav{
+            h3{
+                  font-size: 50px;
+            }
+      }
+}
+
+.new-book-info{
+      display: flex;
+      justify-content: center;
+}
+
+.new-book-info-block{
+      img{
+            width: 200px;
+            height: 300px;
+      }
+}
+
+.new-book-info-block-el{
+      line-height: 25px;
+      width: 200px;
+      span{
+            font-size: 14px;
+            color: #74808c;
+            font-family: 'Roboto';
+            font-weight: 300;
+            text-transform: capitalize;
+      }
+      p{
+            font-size: 16px;
+            color: #000;
+            font-family: 'Roboto';
+            font-weight: 300;
+            text-transform: capitalize;
+      }
+}
+
+.slider-new-book{
+      overflow: hidden;
+}

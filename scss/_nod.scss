@@ -1,0 +1,147 @@
+
+
+.nod-inner{
+      position: relative;
+}
+
+@media only screen and (min-width: 1024px) {
+      .nod-inner-el{
+            margin-top: -600px;
+      }
+}
+
+.nod-inner-el-nav{
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 50px;
+      text-decoration: none;
+      img{
+            width: 40px;
+            height: 20px;
+            background-color: transparent;
+      }
+      h3{
+            font-size: 25px;
+            color: #000;
+            font-family: 'Roboto';
+            text-transform: uppercase;
+      }
+}
+
+@media only screen and (min-width: 1024px) {
+      .nod-inner-el-nav{
+            h3{
+                  font-size: 35px;
+            }
+      }
+}
+
+
+.nod-inner-el-block{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center-;
+}
+
+@media only screen and (min-width: 768px) {
+      .nod-inner-el-block{
+            flex-direction: row;
+      }
+}
+
+.nod-inner-el-block-down{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+}
+
+.nod-inner-el-block-down-1{
+      img{
+            width: 300px;
+            height: 400px;
+      }
+}
+
+.nod-inner-el-block-down-2{
+      button{
+            width: 300px;
+            padding: 15px;
+            background-color: var(--brand-primary);
+            color: #fff;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-family: 'Roboto';
+            border: 1px solid black;
+      }
+}
+
+.nod-inner-el-block-post{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0 50px;
+}
+
+.nod-inner-el-block-post-1{
+      display: flex;
+      gap: 5px;
+      text-transform: capitalize;
+      font-family: "Playfair Display";
+      font-size: 20px;
+      span{
+            color: #555252;
+      }
+      p{
+            color: blue;
+      }
+}
+
+.nod-inner-el-block-post-2{
+      display: flex;
+      gap: 5px;
+      text-transform: capitalize;
+      font-family: "Playfair Display";
+      font-size: 20px;
+      span{
+            color: #555252;
+      }
+      p{
+            color: blue;
+      }
+}
+
+.nod-inner-el-block-post-3{
+      display: flex;
+      gap: 5px;
+      text-transform: capitalize;
+      font-family: "Playfair Display";
+      font-size: 20px;
+      span{
+            color: #555252;
+      }
+      p{
+            color: blue;
+      }
+}
+
+.nod-inner-el-block-post-4{
+      display: flex;
+      gap: 5px;
+      text-transform: capitalize;
+      font-family: "Playfair Display";
+      font-size: 20px;
+      span{
+            color: #555252;
+      }
+      p{
+            color: blue;
+      }
+}
+
+.nod-inner-el-block-post-5{
+      font-family: "Playfair Display";
+      line-height: 25px;
+}
