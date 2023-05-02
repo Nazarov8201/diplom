@@ -57,9 +57,10 @@
 
 @media only screen and (min-width: 1024px) {
       .lib-inner-fot-info{
-            td, th{
+            td, th, td{
                   font-size: 20px;
                   padding: 20px;
+                  text-decoration: none;
             }
       }
 }
@@ -244,3 +245,36 @@
             color: #262a37;
       }
 }
+
+
+
+
+.lib-tab-el a {
+      text-decoration: none;
+      color: #000;
+    }
+    
+    .lib-tab-el a:hover {
+      text-decoration: underline;
+    }
+
+    .lib-tab-not{
+      span{
+            font-size: 25px;
+            text-transform: capitalize;
+            color: blue;
+      }
+      p{
+            color: #fff;
+      }
+    }
+
+    .lib-tab-not-el{
+      padding: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #262a37;
+      border-radius: 12px;
+    }

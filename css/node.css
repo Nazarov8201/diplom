@@ -69,7 +69,7 @@ body.active:before {
   position: fixed;
   top: 0;
   z-index: 100;
-  transition: 0.8s;
+  transition: 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,14 +81,7 @@ body.active:before {
   border: 10px solid rgba(13, 71, 161, 0.6);
   border-radius: 50%;
   border-left-color: #0d47a1;
-  -webkit-animation: loader 8.3s linear infinite;
-          animation: loader 8.3s linear infinite;
-}
-
-@-webkit-keyframes loader {
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: loader 1.3s linear infinite;
 }
 
 @keyframes loader {
@@ -232,20 +225,6 @@ body.active:before {
   background-color: transparent;
   border: none;
   outline: none;
-}
-#serch-text::-moz-placeholder {
-  color: #555252;
-  font-size: 14px;
-  font-family: "Roboto";
-  text-transform: capitalize;
-  text-align: center;
-}
-#serch-text:-ms-input-placeholder {
-  color: #555252;
-  font-size: 14px;
-  font-family: "Roboto";
-  text-transform: capitalize;
-  text-align: center;
 }
 #serch-text::placeholder {
   color: #555252;
@@ -682,6 +661,9 @@ body.active:before {
   justify-content: center;
 }
 
+.new-book-info-block {
+  text-decoration: none;
+}
 .new-book-info-block img {
   width: 200px;
   height: 300px;
@@ -1026,4 +1008,4 @@ body.active:before {
   text-decoration: none;
   font-size: 25px;
   color: #aab6bd;
-}/*# sourceMappingURL=node.css.map */
+}

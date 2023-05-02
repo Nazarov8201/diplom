@@ -1,4 +1,4 @@
-var swiper = new Swiper(".slider-book", {
+    var swiper = new Swiper(".slider-book", {
       spaceBetween: 30,
       loop: true,
       autoplay: {
@@ -26,7 +26,7 @@ var swiper = new Swiper(".slider-book", {
           slidesPerGroup: 4,
         },
       },
-    });
+});
 
     var swiper = new Swiper(".slider-new-book", {
       spaceBetween: 30,

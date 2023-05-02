@@ -53,7 +53,7 @@
   position: fixed;
   top: 0;
   z-index: 100;
-  transition: 0.8s;
+  transition: 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,14 +65,7 @@
   border: 10px solid rgba(13, 71, 161, 0.6);
   border-radius: 50%;
   border-left-color: #0d47a1;
-  -webkit-animation: loader 8.3s linear infinite;
-          animation: loader 8.3s linear infinite;
-}
-
-@-webkit-keyframes loader {
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: loader 1.3s linear infinite;
 }
 
 @keyframes loader {
@@ -216,20 +209,6 @@
   background-color: transparent;
   border: none;
   outline: none;
-}
-#serch-text::-moz-placeholder {
-  color: #555252;
-  font-size: 14px;
-  font-family: "Roboto";
-  text-transform: capitalize;
-  text-align: center;
-}
-#serch-text:-ms-input-placeholder {
-  color: #555252;
-  font-size: 14px;
-  font-family: "Roboto";
-  text-transform: capitalize;
-  text-align: center;
 }
 #serch-text::placeholder {
   color: #555252;
@@ -552,9 +531,10 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .lib-inner-fot-info td, .lib-inner-fot-info th {
+  .lib-inner-fot-info td, .lib-inner-fot-info th, .lib-inner-fot-info td {
     font-size: 20px;
     padding: 20px;
+    text-decoration: none;
   }
 }
 .lib-inner-fot-blog {
@@ -611,16 +591,6 @@
   outline: none;
   border: 1px solid #000;
 }
-#lib1::-moz-placeholder {
-  padding-left: 20px;
-  font-size: 15px;
-  color: var(--content-primary);
-}
-#lib1:-ms-input-placeholder {
-  padding-left: 20px;
-  font-size: 15px;
-  color: var(--content-primary);
-}
 #lib1::placeholder {
   padding-left: 20px;
   font-size: 15px;
@@ -658,18 +628,6 @@
   border-radius: 12px;
   outline: none;
   border: 1px solid #000;
-}
-#lib2::-moz-placeholder {
-  padding-left: 20px;
-  font-size: 15px;
-  color: var(--content-primary);
-  background-color: transparent;
-}
-#lib2:-ms-input-placeholder {
-  padding-left: 20px;
-  font-size: 15px;
-  color: var(--content-primary);
-  background-color: transparent;
 }
 #lib2::placeholder {
   padding-left: 20px;
@@ -744,6 +702,34 @@
   font-size: 18px;
   font-family: "Oen Sans", sans-serif;
   color: #262a37;
+}
+
+.lib-tab-el a {
+  text-decoration: none;
+  color: #000;
+}
+
+.lib-tab-el a:hover {
+  text-decoration: underline;
+}
+
+.lib-tab-not span {
+  font-size: 25px;
+  text-transform: capitalize;
+  color: blue;
+}
+.lib-tab-not p {
+  color: #fff;
+}
+
+.lib-tab-not-el {
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #262a37;
+  border-radius: 12px;
 }
 
 .footer {
@@ -1062,4 +1048,4 @@
   text-decoration: none;
   font-size: 25px;
   color: #aab6bd;
-}/*# sourceMappingURL=aut.css.map */
+}
