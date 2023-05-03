@@ -1737,11 +1737,20 @@ body.active:before {
   text-align: left;
   font-family: "Roboto";
 }
+.lib-inner-fot-info tr {
+  border-bottom: 1px solid #000;
+}
 .lib-inner-fot-info tr:nth-child(even) {
   background-color: #ddd;
 }
 .lib-inner-fot-info tr:nth-child(even) td {
   color: #262a37;
+}
+.lib-inner-fot-info table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 60px;
+  text-align: left;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -1944,6 +1953,14 @@ body.active:before {
   flex-direction: column;
   background: #262a37;
   border-radius: 12px;
+}
+
+.lib-table-pagination-el .pagination-list a {
+  color: blue;
+  text-decoration: none;
+}
+.lib-table-pagination-el .pagination-list a:hover {
+  text-decoration: underline;
 }
 
 .footer {

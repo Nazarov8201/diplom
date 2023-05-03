@@ -121,48 +121,9 @@ let data = [
             date: "2023",
             language: "Ingliz Tili",
             href: "./_new-book-3.html"
-      },
-      {
-            name: "Корпоротивные Финансы Для Чайников",
-            autor: "Maykl Tellard",
-            type: "Badiy Adabiyot",
-            date: "2023",
-            language: "Ingliz Tili",
-            href: "./_new-book-3.html"
-      },
-      {
-            name: "Корпоротивные Финансы Для Чайников",
-            autor: "Maykl Tellard",
-            type: "Badiy Adabiyot",
-            date: "2023",
-            language: "Ingliz Tili",
-            href: "./_new-book-3.html"
-      },
-      {
-            name: "Корпоротивные Финансы Для Чайников",
-            autor: "Maykl Tellard",
-            type: "Badiy Adabiyot",
-            date: "2023",
-            language: "Ingliz Tili",
-            href: "./_new-book-3.html"
-      },
-      {
-            name: "Корпоротивные Финансы Для Чайников",
-            autor: "Maykl Tellard",
-            type: "Badiy Adabiyot",
-            date: "2023",
-            language: "Ingliz Tili",
-            href: "./_new-book-3.html"
-      },
-      {
-            name: "Корпоротивные Финансы Для Чайников",
-            autor: "Maykl Tellard",
-            type: "Badiy Adabiyot",
-            date: "2023",
-            language: "Ingliz Tili",
-            href: "./_new-book-3.html"
       }
 ]
+
 
 
 let list = document.querySelector(".lib-tab");
@@ -188,54 +149,48 @@ searchInput.addEventListener("input", ()=>{
       addToList(filtered);
 })
 
-// const table = document.querySelector('table'); // <table> tegini topamiz
-// const tbody = table.querySelector('tbody'); // <tbody> tegini topamiz
 
-// data.forEach(item => { // data massivida har bir element uchun
-//   const tr = document.createElement('tr'); // <tr> elementini yaratamiz
-//   for (const key in item) { // elementdagi har bir property uchun
-//     const td = document.createElement('td'); // <td> elementini yaratamiz
-//     td.textContent = item[key]; // <td>ning matnini element qiymatiga tenglashtiramiz
-//     tr.appendChild(td); // <td> elementini <tr> elementiga qo'shamiz
-//   }
-//   tbody.appendChild(tr); // <tr> elementini <tbody> elementiga qo'shamiz
-// });
+const itemsPerPage = 5;
+const totalPages = Math.ceil(data.length / itemsPerPage);
+
+function displayPage(pageNumber, data) {
+  const startIndex = (pageNumber - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const pageData = data.slice(startIndex, endIndex);
+
+  const html = pageData.map(item => `<tr class="lib-tab-el"><td><a href="${item.href}">${item.name}</a></td><td>${item.autor}</td><td>${item.type}</td><td>${item.date}</td><td>${item.language}</td></tr>`).join('');
+
+  list.innerHTML = html;
+}
+
+function handlePageClick(event) {
+  const pageNumber = parseInt(event.target.dataset.pageNumber);
+
+  if (pageNumber) {
+    displayPage(pageNumber, data);
+  }
+}
+
+function renderPagination() {
+  const pagination = document.querySelector('.pagination');
+
+  let html = '';
+  for (let i = 1; i <= totalPages; i++) {
+    html += `<div class ="lib-table-pagination-el"><div class ="pagination-list"><a href="#" data-page-number="${i}">${i}</a></div></div>`;
+  }
+
+  pagination.innerHTML = html;
+  pagination.addEventListener('click', handlePageClick);
+}
+
+displayPage(1, data);
+renderPagination();
 
 
-// Kutubxona sahifasining URL manzilini o'zgartirib qo'ying
-const href = './_library.html';
+    
 
-// 100 ta kitobni ko'rish uchun sahifalar sonini topamiz
-fetch(href)
-  .then(response => response.text())
-  .then(html => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    
-    // Malumotlar o'zgaruvchisiga tbodyni joylaymiz
-    const data = doc.querySelector('tbody');
-    
-    // Malumotlar o'zgaruvchisida 10 ta kitobni topamiz
-    const books = data.querySelectorAll('tr');
-    
-    // 100 ta kitobni ro'yxatini saqlash uchun bo'sh ro'yxat yaratamiz
-    const allBooks = [];
-    
-    // Har bir sahifadan 10 ta kitobni olish uchun forEach() metodidan foydalanamiz
-    books.forEach(book => {
-      const name = book.querySelector('td:nth-child(1)').textContent;
-      const author = book.querySelector('td:nth-child(2)').textContent;
-      const type = book.querySelector('td:nth-child(3)').textContent;
-      const date = book.querySelector('td:nth-child(4)').textContent;
-      const language = book.querySelector('td:nth-child(5)').textContent;
-      const href = book.querySelector('td:nth-child(6) a').href;
-      
-      // Har bir kitobni ro'yxatga qo'shamiz
-      allBooks.push({ name, author, type, date, language, href });
-    });
-    
-    console.log(allBooks);
-  });
+
+
 
 
 
