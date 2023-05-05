@@ -133,61 +133,113 @@ addToList(data);
 
 function addToList(filteredData){
       if(filteredData.length === 0){
-        list.innerHTML = `<tr class="lib-tab-not"><td colspan="5"><div class="lib-tab-not-el"><span>hesh narsa topilmadi.</span><p>Kiritilgan qidiruv soʻzi boʻyicha hech qanday natija topilmadi.</p></div></td></tr>`;
+          list.innerHTML = `<tr class="lib-tab-not"><td colspan="5"><div class="lib-tab-not-el"><span>hesh narsa topilmadi.</span><p>Kiritilgan qidiruv soʻzi boʻyicha hech qanday natija topilmadi.</p></div></td></tr>`;
       } else {
-        list.innerHTML = "";
-        filteredData.map((item)=>{
-          list.insertAdjacentHTML('beforeend', `<tr class="lib-tab-el"><td><a href="${item.href}">${item.name}</a></td><td>${item.autor}</td><td>${item.type}</td><td>${item.date}</td><td>${item.language}</td></tr>`);
-        });
+          let html = "";
+          for(let i=0; i<filteredData.length; i++){
+              html += `<tr>
+                           <td>${i+1}</td>
+                           <td>${filteredData[i].name}</td>
+                           <td>${filteredData[i].autor}</td>
+                           <td>${filteredData[i].type}</td>
+                           <td>${filteredData[i].date}</td>
+                      </tr>`;
+          }
+          list.innerHTML = html;
       }
+}
+    
+
+searchInput.addEventListener("input", function(){
+      let query = this.value.toLowerCase();
+      let filteredData = data.filter(function(item){
+          return item.name.toLowerCase().includes(query);
+      });
+      addToList(filteredData);
+});
+
+let link = document.getElementsByClassName("link");
+
+let currentValue = 1;
+
+function activeLink(){
+    for(l of link){
+        l.classList.remove("active");
     }
-    
-
-searchInput.addEventListener("input", ()=>{
-      let filtered = data.filter((item)=>item.name.toLocaleLowerCase().startsWith(searchInput.value.toLocaleLowerCase()));
-
-      addToList(filtered);
-})
-
-
-const itemsPerPage = 5;
-const totalPages = Math.ceil(data.length / itemsPerPage);
-
-function displayPage(pageNumber, data) {
-  const startIndex = (pageNumber - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const pageData = data.slice(startIndex, endIndex);
-
-  const html = pageData.map(item => `<tr class="lib-tab-el"><td><a href="${item.href}">${item.name}</a></td><td>${item.autor}</td><td>${item.type}</td><td>${item.date}</td><td>${item.language}</td></tr>`).join('');
-
-  list.innerHTML = html;
+    event.target.classList.add("active");
+    currentValue = event.target.value;
 }
 
-function handlePageClick(event) {
-  const pageNumber = parseInt(event.target.dataset.pageNumber);
-
-  if (pageNumber) {
-    displayPage(pageNumber, data);
-  }
+function backBtn(){
+    if(currentValue > 1){
+        for(l of link){
+            l.classList.remove("active");
+        }
+        currentValue--;
+        link[currentValue-1].classList.add("active")
+    }
 }
 
-function renderPagination() {
-  const pagination = document.querySelector('.pagination');
-
-  let html = '';
-  for (let i = 1; i <= totalPages; i++) {
-    html += `<div class ="lib-table-pagination-el"><div class ="pagination-list"><a href="#" data-page-number="${i}">${i}</a></div></div>`;
-  }
-
-  pagination.innerHTML = html;
-  pagination.addEventListener('click', handlePageClick);
+function nextBtn(){
+    if(currentValue < 6){
+        for(l of link){
+            l.classList.remove("active");
+        }
+        currentValue++;
+        link[currentValue-1].classList.add("active")
+    }
 }
 
-displayPage(1, data);
-renderPagination();
+
+// def pagination(items, page_size, page_number):
+//     start_index = (page_number - 1) * page_size
+//     end_index = page_number * page_size
+//     return items[start_index:end_index]
+
+//     items_per_page = 5
+//     number_of_pages = len(items) // items_per_page + 1
+//     for i in range(1, number_of_pages + 1):
+//         print(paginate(items, items_per_page, i))
 
 
-    
+// const itemsPerPage = 10;
+// const totalPages = Math.ceil(data.length / itemsPerPage);
+
+// function displayPage(pageNumber, data) {
+//   const startIndex = (pageNumber - 1) * itemsPerPage;
+//   const endIndex = startIndex + itemsPerPage;
+//   const pageData = data.slice(startIndex, endIndex);
+
+//   const html = pageData.map(item => `<tr class="lib-tab-el"><td><a href="${item.href}">${item.name}</a></td><td>${item.autor}</td><td>${item.type}</td><td>${item.date}</td><td>${item.language}</td></tr>`).join('');
+
+//   list.innerHTML = html;
+// }
+
+// function handlePageClick(event) {
+//   const pageNumber = parseInt(event.target.dataset.pageNumber);
+
+//   if (pageNumber) {
+//     displayPage(pageNumber, data);
+//   }
+// }
+
+// function renderPagination() {
+//   const pagination = document.querySelector('.pagination');
+
+//   let html = '';
+//   for (let i = 1; i <= totalPages; i++) {
+//     html += `<div class ="lib-table-pagination-el"><div class ="pagination-list"><a href="#" class="page-namber" data-page-number="${i}">${i}</a></div></div>`;
+//   }
+
+//   pagination.innerHTML = html;
+//   pagination.addEventListener('click', handlePageClick);
+// }
+
+// displayPage(1, data);
+// renderPagination();
+
+
+
 
 
 

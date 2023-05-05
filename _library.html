@@ -111,6 +111,7 @@
                                           <div class="lib-inner-fot-info">
                                                 <table style="border-collapse: collapse; width: 100%; margin-top: 60px; text-align: left;" >
                                                       <tr style="border-bottom: 1px solid #000;">
+                                                            <th>№</th>
                                                             <th>Adabiyot</th>
                                                             <th>Muallifi</th>
                                                             <th>Resurs Turi</th>
@@ -118,14 +119,19 @@
                                                             <th>Tili</th>
                                                       </tr>
                                                       <tbody class="lib-tab">
-                                                            <div class="pagination">
-                                                                  <ul class="page-numbers">
-                                                                        <li><a href="#" data-page-number="1">1</a></li>
-                                                                        <li><a href="#" data-page-number="2">2</a></li>
-                                                                        <li><a href="#" data-page-number="3">3</a></li>
-                                                                        <li><a href="#" data-page-number="4">4</a></li>
-                                                                        <li><a href="#" data-page-number="5">5</a></li>
-                                                                  </ul>
+                                                            <div class="pag">
+                                                                  <div class="pagination">
+                                                                        <button class="btn1" onclick="backBtn()"><img src="images/arrow-png.png"> prev</button>
+                                                                        <ul>
+                                                                              <li class="link active" value="1" onclick="activeLink()">1</li>
+                                                                              <li class="link" value="2" onclick="activeLink()">2</li>
+                                                                              <li class="link" value="3" onclick="activeLink()">3</li>
+                                                                              <li class="link" value="4" onclick="activeLink()">4</li>
+                                                                              <li class="link" value="5" onclick="activeLink()">5</li>
+                                                                              <li class="link" value="6" onclick="activeLink()">6</li>
+                                                                        </ul>
+                                                                        <button class="btn2" onclick="nextBtn()">next <img src="images/arrow-left.png"></button>
+                                                                  </div>
                                                             </div>
                                                       </tbody>
                                                 </table>
